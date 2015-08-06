@@ -5,12 +5,12 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('dp:server');
+var debug = require('debug')('coinbase:server');
 var http = require('http');
 var task_runner = require('../server/task_runner.js');
 
 
-task_runner.loopTasks();
+task_runner.loopTasks;
 
 /**
  * Get port from environment and store in Express.

@@ -1,7 +1,7 @@
 var btccclient = require('./interfaces/btccclient.js');
 var fs = require('fs');
 
-exports.loopTasks = function() {
+function loopTasks() {
     console.log("looping task");
 
     btccclient.downloadData(function (error) {
@@ -13,13 +13,8 @@ exports.loopTasks = function() {
         var wstream = fs.createWriteStream('../bitcoinCharts.json');
         rstream.pipe(wstream);
 
-        this.state++;
-        setTimeout(test(), 100);
+        setTimeout(loopTasks, 10000);
     });
 };
 
-var test = function() {
-    this.loopTasks();
-};
-
-//exports.loopTasks = loopTasks();
+module.exports.loopTasks = loopTasks();

@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var dp = require('./routes/dp');
-var dpauth = require('./routes/dpauth');
+var coinbase = require('./routes/coinbase');
+var coinbaseauth = require('./routes/coinbase-auth');
 var btccharts = require('./routes/btccharts');
 var bitstamp = require('./routes/bitstamp');
 
@@ -29,8 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/dp', dp);
-app.use('/dpauth', dpauth);
+app.use('/coinbase', coinbase);
+app.use('/coinbaseauth', coinbaseauth);
 app.use('/btccharts', btccharts);
 app.use('/bitstamp', bitstamp);
 
