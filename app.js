@@ -11,6 +11,8 @@ var coinbase = require('./routes/coinbase');
 var coinbaseauth = require('./routes/coinbase-auth');
 var btccharts = require('./routes/btccharts');
 var bitstamp = require('./routes/bitstamp');
+var cex = require('./routes/cex');
+var btce = require('./routes/btce');
 
 var app = express();
 
@@ -33,6 +35,8 @@ app.use('/coinbase', coinbase);
 app.use('/coinbaseauth', coinbaseauth);
 app.use('/btccharts', btccharts);
 app.use('/bitstamp', bitstamp);
+app.use('/cex', cex);
+app.use('/btce', btce);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
